@@ -5,12 +5,10 @@ var user = require('./routes/user');
 
 var url = require('url');
 
-
-
-
 var app = express();
 
 app.use(logfmt.requestLogger());
+app.use(express.bodyParser());
 
 app.get('/', home.index);
 app.post('/register', user.register);
